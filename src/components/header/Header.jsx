@@ -1,11 +1,11 @@
-import './header.scss';
+import './Header.scss';
 
 function Header() {
   return (
     <div className="header fixed top-0 left-0 right-0 flex justify-between items-center p-4">
       {/* hamburger & title */}
       <div className="flex gap-4">
-        <div>
+        <div className="my-auto cursor-pointer">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -21,10 +21,10 @@ function Header() {
             />
           </svg>
         </div>
-        <div>Todo List</div>
+        <div className="text-xl">Todo List</div>
       </div>
       {/* icon */}
-      <div>
+      <div className="cursor-pointer">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
