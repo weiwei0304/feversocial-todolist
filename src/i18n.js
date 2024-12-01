@@ -7,6 +7,7 @@ const resources = {
       todoList: 'Todo List',
       progress: 'Progress',
       inputPlaceholder: 'Enter your todo...',
+      dragTip: 'Hold to drag',
       defaultTasks: {
         apple: 'An apple a day keeps the doctor away',
         basketball: 'Shoot 1000 baskets',
@@ -19,6 +20,7 @@ const resources = {
       todoList: 'Todo List',
       progress: '進度',
       inputPlaceholder: '請輸入待辦事項...',
+      dragTip: '按住以拖曳',
       defaultTasks: {
         apple: '一天一蘋果，醫生遠離我',
         basketball: '投籃 1000 次',
