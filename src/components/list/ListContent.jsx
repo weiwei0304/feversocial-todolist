@@ -1,14 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import './ListContent.scss';
 
 // components
 import TodoInput from './TodoInput';
 
 function ListContent() {
+  const { t } = useTranslation();
+
   const [todos, setTodos] = useState([
-    { id: 1, text: '一天一蘋果，醫生遠離我', completed: false },
-    { id: 2, text: '投籃 1000 次', completed: false },
-    { id: 3, text: '完成 pre test 作業', completed: true },
+    { id: 1, text: t('defaultTasks.apple'), completed: false },
+    { id: 2, text: t('defaultTasks.basketball'), completed: false },
+    { id: 3, text: t('defaultTasks.homework'), completed: true },
   ]);
 
   const completedTodos = todos.filter((todo) => todo.completed);
@@ -44,12 +47,20 @@ function ListContent() {
     setDeletingId(null);
   };
 
+  useEffect(() => {
+    setTodos([
+      { id: 1, text: t('defaultTasks.apple'), completed: false },
+      { id: 2, text: t('defaultTasks.basketball'), completed: false },
+      { id: 3, text: t('defaultTasks.homework'), completed: true },
+    ]);
+  }, [t]);
+
   return (
     <div className="list-container p-4 rounded-lg w-full max-w-10xl mx-auto min-h-0 h-full">
       <div className="bg-white p-4 rounded-lg shadow-sm h-full flex flex-col">
         {/* 進度條 */}
         <div className="mb-4 font-medium">
-          進度：{completedTodos.length}/{totalCount}
+          {t('progress')}: {completedTodos.length}/{totalCount}
         </div>
         {/* 可滾動的列表區域 */}
         <div className="flex flex-col space-y-2 flex-1 overflow-y-auto">

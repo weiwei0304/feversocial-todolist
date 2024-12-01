@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const TodoInput = ({ onSubmit }) => {
+  const { t } = useTranslation();
+
   const [newTodo, setNewTodo] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,7 +25,7 @@ const TodoInput = ({ onSubmit }) => {
         type="text"
         value={newTodo}
         onChange={(e) => setNewTodo(e.target.value)}
-        placeholder="請輸入要完成的事項..."
+        placeholder={t('inputPlaceholder')}
         className="flex-1 border rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500"
         disabled={isLoading}
       />
