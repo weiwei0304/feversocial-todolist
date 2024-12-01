@@ -1,4 +1,4 @@
-import './Header.scss';
+import './header.scss';
 import { useTranslation } from 'react-i18next';
 
 function Header() {
