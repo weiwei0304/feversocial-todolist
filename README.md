@@ -2,6 +2,7 @@
 
 # 移除 node_modules 資料夾和 package-lock.json（如果存在）
 rm -rf node_modules
+
 rm package-lock.json
 
 # 接著install
